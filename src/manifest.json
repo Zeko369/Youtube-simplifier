@@ -8,7 +8,7 @@
     "default_popup:": "popup.html"
   },
 
-  "permissions": ["webNavigation", "tabs", "webRequestBlocking", "webRequest", "*://www.youtube.com/*"],
+  "permissions": ["webNavigation", "tabs", "webRequest", "webRequestBlocking", "*://www.youtube.com/*"],
 
   "content_scripts": [
     // {
@@ -26,7 +26,7 @@
   ],
 
   "background": {
-    "scripts": ["background.js"]
+    "page": "background.html"
   },
 
   "manifest_version": 2
