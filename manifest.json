@@ -1,0 +1,33 @@
+{
+  "name": "Youtube simplifier",
+  "description" : "Removes distractions",
+  "version" : "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup:": "popup.html"
+  },
+
+  "permissions": ["webNavigation", "tabs", "webRequestBlocking", "webRequest", "*://www.youtube.com/*"],
+
+  "content_scripts": [
+    // {
+    //   "matches": ["https://www.youtube.com/"],
+    //   "exclude_matches": ["https://www.youtube.com/*"],
+    //   "js": ["instaRedirect.js"],
+    //   "run_at": "document_start"
+    // },
+    {
+      "matches": ["https://www.youtube.com/*"],
+      // "exclude_matches": ["https://www.youtube.com/"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "manifest_version": 2
+}
